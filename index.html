@@ -108,7 +108,7 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  background: url('assets/hero_bg.jpeg') center/cover no-repeat;
+  background: url('assets/hero_bg.webp') center/cover no-repeat;
   filter: brightness(0.35) contrast(1.1);
 }
 .hero-bg::after {
@@ -727,6 +727,18 @@ a { color: inherit; text-decoration: none; }
   .contact-info { gap: 2rem; }
   .hero-meta { gap: 1.5rem; }
 }
+
+/* ========== Lazy Load Image Fade-in ========== */
+img {
+  transition: opacity 0.5s var(--ease), filter 0.5s var(--ease);
+}
+img[loading="lazy"] {
+  opacity: 0;
+}
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
 </style>
 </head>
 <body>
@@ -787,7 +799,7 @@ a { color: inherit; text-decoration: none; }
 
     <div class="about-grid">
       <div class="about-image reveal">
-        <img src="assets/portrait.jpeg" alt="设计师肖像">
+        <img loading="eager" src="assets/portrait.webp" alt="设计师肖像">
       </div>
       <div class="about-text reveal reveal-delay-1">
         <p class="quote">好的设计不仅是视觉的盛宴，更是生活方式的重塑，是功能与情感的完美共鸣。</p>
@@ -906,7 +918,7 @@ a { color: inherit; text-decoration: none; }
 
 <!-- ========== Section Divider: Commercial ========== -->
 <div class="section-divider">
-  <div class="bg" style="background-image: url('assets/section_commercial.jpeg');"></div>
+  <div class="bg" style="background-image: url('assets/section_commercial.webp');"></div>
   <div class="content reveal">
     <div class="num">01</div>
     <div class="title">商业空间</div>
@@ -933,141 +945,141 @@ a { color: inherit; text-decoration: none; }
     <div class="projects-grid" id="projectsGrid">
       <!-- Commercial -->
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/huawei_nanchang_01.jpeg" alt="华为南昌旗舰店"></div>
+        <div class="project-img"><img loading="eager" src="assets/huawei_nanchang_01.webp" alt="华为南昌旗舰店"></div>
         <div class="always-visible"><h3>华为南昌旗舰店</h3><div class="en">HUAWEI Nanchang Flagship Store</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>华为南昌旗舰店</h3><div class="en">HUAWEI Nanchang Flagship Store</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/huawei_expo_01.jpeg" alt="华为会展中心"></div>
+        <div class="project-img"><img loading="eager" src="assets/huawei_expo_01.webp" alt="华为会展中心"></div>
         <div class="always-visible"><h3>华为会展中心</h3><div class="en">HUAWEI Expo Center</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>华为会展中心</h3><div class="en">HUAWEI Expo Center</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/byd_nanning_01.jpeg" alt="比亚迪南宁体验中心"></div>
+        <div class="project-img"><img loading="lazy" src="assets/byd_nanning_01.webp" alt="比亚迪南宁体验中心"></div>
         <div class="always-visible"><h3>比亚迪南宁体验中心</h3><div class="en">BYD Nanning Experience Center</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>比亚迪南宁体验中心</h3><div class="en">BYD Nanning Experience Center</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/byd_xian_01.jpeg" alt="比亚迪西安展厅"></div>
+        <div class="project-img"><img loading="lazy" src="assets/byd_xian_01.webp" alt="比亚迪西安展厅"></div>
         <div class="always-visible"><h3>比亚迪西安展厅</h3><div class="en">BYD Xi'an Showroom</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>比亚迪西安展厅</h3><div class="en">BYD Xi'an Showroom</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/byd_denza_01.jpeg" alt="比亚迪腾势体验中心"></div>
+        <div class="project-img"><img loading="lazy" src="assets/byd_denza_01.webp" alt="比亚迪腾势体验中心"></div>
         <div class="always-visible"><h3>比亚迪腾势体验中心</h3><div class="en">BYD DENZA Experience Center</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>比亚迪腾势体验中心</h3><div class="en">BYD DENZA Experience Center</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/huaxia_pawnshop_01.jpeg" alt="华夏典当行"></div>
+        <div class="project-img"><img loading="lazy" src="assets/huaxia_pawnshop_01.webp" alt="华夏典当行"></div>
         <div class="always-visible"><h3>华夏典当行</h3><div class="en">Huaxia Pawnshop</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>华夏典当行</h3><div class="en">Huaxia Pawnshop</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/ordos_library_01.jpeg" alt="鄂尔多斯党校图书馆"></div>
+        <div class="project-img"><img loading="lazy" src="assets/ordos_library_01.webp" alt="鄂尔多斯党校图书馆"></div>
         <div class="always-visible"><h3>鄂尔多斯党校图书馆</h3><div class="en">Library of Ordos Party School</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>鄂尔多斯党校图书馆</h3><div class="en">Library of Ordos Party School</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/shanxi_univ_01.jpeg" alt="山西文化旅游大学"></div>
+        <div class="project-img"><img loading="lazy" src="assets/shanxi_univ_01.webp" alt="山西文化旅游大学"></div>
         <div class="always-visible"><h3>山西文化旅游大学</h3><div class="en">Shanxi University of Culture and Tourism</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>山西文化旅游大学</h3><div class="en">Shanxi University of Culture and Tourism</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/shanghai_biopharm_01.jpeg" alt="上海生物制药展厅"></div>
+        <div class="project-img"><img loading="lazy" src="assets/shanghai_biopharm_01.webp" alt="上海生物制药展厅"></div>
         <div class="always-visible"><h3>上海生物制药展厅</h3><div class="en">Shanghai Biopharmaceutical Exhibition Hall</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>上海生物制药展厅</h3><div class="en">Shanghai Biopharmaceutical Exhibition Hall</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/hongcaifang_01.jpeg" alt="红菜坊餐厅"></div>
+        <div class="project-img"><img loading="lazy" src="assets/hongcaifang_01.webp" alt="红菜坊餐厅"></div>
         <div class="always-visible"><h3>红菜坊餐厅</h3><div class="en">Hongcaifang Restaurant</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>红菜坊餐厅</h3><div class="en">Hongcaifang Restaurant</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/moutai_01.jpeg" alt="茅台酒业会所"></div>
+        <div class="project-img"><img loading="lazy" src="assets/moutai_01.webp" alt="茅台酒业会所"></div>
         <div class="always-visible"><h3>茅台酒业会所</h3><div class="en">Moutai Wine Club</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>茅台酒业会所</h3><div class="en">Moutai Wine Club</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/block_museum_01.jpeg" alt="积木游戏博物馆"></div>
+        <div class="project-img"><img loading="lazy" src="assets/block_museum_01.webp" alt="积木游戏博物馆"></div>
         <div class="always-visible"><h3>积木游戏博物馆</h3><div class="en">Building Block Game Museum</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>积木游戏博物馆</h3><div class="en">Building Block Game Museum</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/jimubaby_01.jpeg" alt="积木宝贝花乡奥莱店"></div>
+        <div class="project-img"><img loading="lazy" src="assets/jimubaby_01.webp" alt="积木宝贝花乡奥莱店"></div>
         <div class="always-visible"><h3>积木宝贝花乡奥莱店</h3><div class="en">Jimubaby Huaxiang Outlets Store</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>积木宝贝花乡奥莱店</h3><div class="en">Jimubaby Huaxiang Outlets Store</div></div>
       </div>
       <div class="project-card" data-cat="commercial">
-        <div class="project-img"><img src="assets/chengdu_streaming_01.jpeg" alt="成都流媒体直播基地"></div>
+        <div class="project-img"><img loading="lazy" src="assets/chengdu_streaming_01.webp" alt="成都流媒体直播基地"></div>
         <div class="always-visible"><h3>成都流媒体直播基地</h3><div class="en">Chengdu Streaming Base</div></div>
         <div class="project-info"><div class="cat">商业空间</div><h3>成都流媒体直播基地</h3><div class="en">Chengdu Streaming Base</div></div>
       </div>
 
       <!-- Residential -->
       <div class="project-card" data-cat="residential">
-        <div class="project-img"><img src="assets/hangzhou_villa_01.jpeg" alt="杭州新湖香格里拉别墅"></div>
+        <div class="project-img"><img loading="lazy" src="assets/hangzhou_villa_01.webp" alt="杭州新湖香格里拉别墅"></div>
         <div class="always-visible"><h3>杭州新湖香格里拉别墅</h3><div class="en">Hangzhou Xinhu Shangri-La Villa</div></div>
         <div class="project-info"><div class="cat">住宅空间</div><h3>杭州新湖香格里拉别墅</h3><div class="en">Hangzhou Xinhu Shangri-La Villa</div></div>
       </div>
       <div class="project-card" data-cat="residential">
-        <div class="project-img"><img src="assets/henderson_villa_01.jpeg" alt="恒基-傲云别墅"></div>
+        <div class="project-img"><img loading="lazy" src="assets/henderson_villa_01.webp" alt="恒基-傲云别墅"></div>
         <div class="always-visible"><h3>恒基-傲云别墅</h3><div class="en">Henderson Aoyun Villa</div></div>
         <div class="project-info"><div class="cat">住宅空间</div><h3>恒基-傲云别墅</h3><div class="en">Henderson Aoyun Villa</div></div>
       </div>
       <div class="project-card" data-cat="residential">
-        <div class="project-img"><img src="assets/evergrande_01.jpeg" alt="恒大-天宸"></div>
+        <div class="project-img"><img loading="lazy" src="assets/evergrande_01.webp" alt="恒大-天宸"></div>
         <div class="always-visible"><h3>恒大-天宸</h3><div class="en">Evergrande Tianchen</div></div>
         <div class="project-info"><div class="cat">住宅空间</div><h3>恒大-天宸</h3><div class="en">Evergrande Tianchen</div></div>
       </div>
       <div class="project-card" data-cat="residential">
-        <div class="project-img"><img src="assets/chinese_courtyard_01.jpeg" alt="中国院子别墅"></div>
+        <div class="project-img"><img loading="lazy" src="assets/chinese_courtyard_01.webp" alt="中国院子别墅"></div>
         <div class="always-visible"><h3>中国院子别墅</h3><div class="en">Chinese Courtyard Villa</div></div>
         <div class="project-info"><div class="cat">住宅空间</div><h3>中国院子别墅</h3><div class="en">Chinese Courtyard Villa</div></div>
       </div>
       <div class="project-card" data-cat="residential">
-        <div class="project-img"><img src="assets/cr_land_01.jpeg" alt="华润地产一城一策户型开发"></div>
+        <div class="project-img"><img loading="lazy" src="assets/cr_land_01.webp" alt="华润地产一城一策户型开发"></div>
         <div class="always-visible"><h3>华润地产一城一策</h3><div class="en">China Resources Land Unit Development</div></div>
         <div class="project-info"><div class="cat">住宅空间</div><h3>华润地产一城一策</h3><div class="en">China Resources Land Unit Development</div></div>
       </div>
       <div class="project-card" data-cat="residential">
-        <div class="project-img"><img src="assets/shoukai_res_01.jpeg" alt="首开地产广佛地区户型标准化"></div>
+        <div class="project-img"><img loading="lazy" src="assets/shoukai_res_01.webp" alt="首开地产广佛地区户型标准化"></div>
         <div class="always-visible"><h3>首开地产户型标准化</h3><div class="en">Shoukai Land Apartment Standardization</div></div>
         <div class="project-info"><div class="cat">住宅空间</div><h3>首开地产户型标准化</h3><div class="en">Shoukai Land Apartment Standardization</div></div>
       </div>
 
       <!-- Office -->
       <div class="project-card" data-cat="office">
-        <div class="project-img"><img src="assets/shoukai_office_01.jpeg" alt="首开广场办公楼"></div>
+        <div class="project-img"><img loading="lazy" src="assets/shoukai_office_01.webp" alt="首开广场办公楼"></div>
         <div class="always-visible"><h3>首开广场办公楼</h3><div class="en">Shoukai Square Office Building</div></div>
         <div class="project-info"><div class="cat">办公空间</div><h3>首开广场办公楼</h3><div class="en">Shoukai Square Office Building</div></div>
       </div>
       <div class="project-card" data-cat="office">
-        <div class="project-img"><img src="assets/runda_01.jpeg" alt="润达集团办公楼"></div>
+        <div class="project-img"><img loading="lazy" src="assets/runda_01.webp" alt="润达集团办公楼"></div>
         <div class="always-visible"><h3>润达集团办公楼</h3><div class="en">RunDa Group Office Building</div></div>
         <div class="project-info"><div class="cat">办公空间</div><h3>润达集团办公楼</h3><div class="en">RunDa Group Office Building</div></div>
       </div>
       <div class="project-card" data-cat="office">
-        <div class="project-img"><img src="assets/lantai_01.jpeg" alt="兰台律师事务所"></div>
+        <div class="project-img"><img loading="lazy" src="assets/lantai_01.webp" alt="兰台律师事务所"></div>
         <div class="always-visible"><h3>兰台律师事务所</h3><div class="en">Lantai Law Office</div></div>
         <div class="project-info"><div class="cat">办公空间</div><h3>兰台律师事务所</h3><div class="en">Lantai Law Office</div></div>
       </div>
       <div class="project-card" data-cat="office">
-        <div class="project-img"><img src="assets/qishang_01.jpeg" alt="企商在线数据中心"></div>
+        <div class="project-img"><img loading="lazy" src="assets/qishang_01.webp" alt="企商在线数据中心"></div>
         <div class="always-visible"><h3>企商在线数据中心</h3><div class="en">Qishang Online Datacenter</div></div>
         <div class="project-info"><div class="cat">办公空间</div><h3>企商在线数据中心</h3><div class="en">Qishang Online Datacenter</div></div>
       </div>
       <div class="project-card" data-cat="office">
-        <div class="project-img"><img src="assets/heping_01.jpeg" alt="中国和平"></div>
+        <div class="project-img"><img loading="lazy" src="assets/heping_01.webp" alt="中国和平"></div>
         <div class="always-visible"><h3>中国和平</h3><div class="en">China Heping</div></div>
         <div class="project-info"><div class="cat">办公空间</div><h3>中国和平</h3><div class="en">China Heping</div></div>
       </div>
       <div class="project-card" data-cat="office">
-        <div class="project-img"><img src="assets/taiyuan_01.jpeg" alt="太原办公室"></div>
+        <div class="project-img"><img loading="lazy" src="assets/taiyuan_01.webp" alt="太原办公室"></div>
         <div class="always-visible"><h3>太原办公室</h3><div class="en">Taiyuan Office</div></div>
         <div class="project-info"><div class="cat">办公空间</div><h3>太原办公室</h3><div class="en">Taiyuan Office</div></div>
       </div>
       <div class="project-card" data-cat="office">
-        <div class="project-img"><img src="assets/changzhi_01.jpeg" alt="长治新闻大厦"></div>
+        <div class="project-img"><img loading="lazy" src="assets/changzhi_01.webp" alt="长治新闻大厦"></div>
         <div class="always-visible"><h3>长治新闻大厦</h3><div class="en">Changzhi News Building</div></div>
         <div class="project-info"><div class="cat">办公空间</div><h3>长治新闻大厦</h3><div class="en">Changzhi News Building</div></div>
       </div>
@@ -1077,7 +1089,7 @@ a { color: inherit; text-decoration: none; }
 
 <!-- ========== Section Divider: Residential ========== -->
 <div class="section-divider">
-  <div class="bg" style="background-image: url('assets/section_residential.jpeg');"></div>
+  <div class="bg" style="background-image: url('assets/section_residential.webp');"></div>
   <div class="content reveal">
     <div class="num">02</div>
     <div class="title">住宅空间</div>
@@ -1101,9 +1113,9 @@ a { color: inherit; text-decoration: none; }
         <div class="cat-tag">住宅空间 · RESIDENTIAL</div>
       </div>
       <div class="project-images cols-2">
-        <img src="assets/hangzhou_villa_01.jpeg" alt="杭州新湖香格里拉别墅" class="img-large" onclick="openLightbox(this)">
-        <img src="assets/hangzhou_villa_02.jpeg" alt="杭州别墅室内" onclick="openLightbox(this)">
-        <img src="assets/hangzhou_villa_03.jpeg" alt="杭州别墅细节" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/hangzhou_villa_01.webp" alt="杭州新湖香格里拉别墅" class="img-large" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/hangzhou_villa_02.webp" alt="杭州别墅室内" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/hangzhou_villa_03.webp" alt="杭州别墅细节" onclick="openLightbox(this)">
       </div>
     </div>
 
@@ -1117,9 +1129,9 @@ a { color: inherit; text-decoration: none; }
         <div class="cat-tag">住宅空间 · RESIDENTIAL</div>
       </div>
       <div class="project-images cols-3">
-        <img src="assets/henderson_villa_01.jpeg" alt="恒基傲云别墅" class="img-large" onclick="openLightbox(this)">
-        <img src="assets/henderson_villa_02.jpeg" alt="傲云别墅细节1" onclick="openLightbox(this)">
-        <img src="assets/henderson_villa_03.jpeg" alt="傲云别墅细节2" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/henderson_villa_01.webp" alt="恒基傲云别墅" class="img-large" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/henderson_villa_02.webp" alt="傲云别墅细节1" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/henderson_villa_03.webp" alt="傲云别墅细节2" onclick="openLightbox(this)">
       </div>
     </div>
 
@@ -1133,9 +1145,9 @@ a { color: inherit; text-decoration: none; }
         <div class="cat-tag">住宅空间 · RESIDENTIAL</div>
       </div>
       <div class="project-images cols-3">
-        <img src="assets/evergrande_01.jpeg" alt="恒大天宸" class="img-large" onclick="openLightbox(this)">
-        <img src="assets/evergrande_02.jpeg" alt="恒大天宸细节1" onclick="openLightbox(this)">
-        <img src="assets/evergrande_03.jpeg" alt="恒大天宸细节2" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/evergrande_01.webp" alt="恒大天宸" class="img-large" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/evergrande_02.webp" alt="恒大天宸细节1" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/evergrande_03.webp" alt="恒大天宸细节2" onclick="openLightbox(this)">
       </div>
     </div>
 
@@ -1149,9 +1161,9 @@ a { color: inherit; text-decoration: none; }
         <div class="cat-tag">住宅空间 · RESIDENTIAL</div>
       </div>
       <div class="project-images cols-3">
-        <img src="assets/cr_land_01.jpeg" alt="华润地产户型开发" class="img-large" onclick="openLightbox(this)">
-        <img src="assets/cr_land_02.jpeg" alt="可变空间模块" onclick="openLightbox(this)">
-        <img src="assets/cr_land_03.jpeg" alt="全屋收纳系统" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/cr_land_01.webp" alt="华润地产户型开发" class="img-large" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/cr_land_02.webp" alt="可变空间模块" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/cr_land_03.webp" alt="全屋收纳系统" onclick="openLightbox(this)">
       </div>
     </div>
   </div>
@@ -1159,7 +1171,7 @@ a { color: inherit; text-decoration: none; }
 
 <!-- ========== Section Divider: Office ========== -->
 <div class="section-divider">
-  <div class="bg" style="background-image: url('assets/section_office.jpeg');"></div>
+  <div class="bg" style="background-image: url('assets/section_office.webp');"></div>
   <div class="content reveal">
     <div class="num">03</div>
     <div class="title">办公空间</div>
@@ -1183,9 +1195,9 @@ a { color: inherit; text-decoration: none; }
         <div class="cat-tag">办公空间 · OFFICE</div>
       </div>
       <div class="project-images cols-2">
-        <img src="assets/shoukai_office_01.jpeg" alt="首开广场办公楼" class="img-large" onclick="openLightbox(this)">
-        <img src="assets/shoukai_office_03.jpeg" alt="办公楼大堂" onclick="openLightbox(this)">
-        <img src="assets/shoukai_office_04.jpeg" alt="办公楼走廊" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/shoukai_office_01.webp" alt="首开广场办公楼" class="img-large" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/shoukai_office_03.webp" alt="办公楼大堂" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/shoukai_office_04.webp" alt="办公楼走廊" onclick="openLightbox(this)">
       </div>
     </div>
 
@@ -1199,9 +1211,9 @@ a { color: inherit; text-decoration: none; }
         <div class="cat-tag">办公空间 · OFFICE</div>
       </div>
       <div class="project-images cols-3">
-        <img src="assets/runda_01.jpeg" alt="润达集团办公楼" class="img-large" onclick="openLightbox(this)">
-        <img src="assets/runda_02.jpeg" alt="润达办公楼细节1" onclick="openLightbox(this)">
-        <img src="assets/runda_03.jpeg" alt="润达办公楼细节2" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/runda_01.webp" alt="润达集团办公楼" class="img-large" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/runda_02.webp" alt="润达办公楼细节1" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/runda_03.webp" alt="润达办公楼细节2" onclick="openLightbox(this)">
       </div>
     </div>
 
@@ -1215,8 +1227,8 @@ a { color: inherit; text-decoration: none; }
         <div class="cat-tag">办公空间 · OFFICE</div>
       </div>
       <div class="project-images cols-2">
-        <img src="assets/lantai_01.jpeg" alt="兰台律师事务所" class="img-large" onclick="openLightbox(this)">
-        <img src="assets/lantai_02.jpeg" alt="兰台律所细节" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/lantai_01.webp" alt="兰台律师事务所" class="img-large" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/lantai_02.webp" alt="兰台律所细节" onclick="openLightbox(this)">
       </div>
     </div>
 
@@ -1230,9 +1242,9 @@ a { color: inherit; text-decoration: none; }
         <div class="cat-tag">办公空间 · OFFICE</div>
       </div>
       <div class="project-images cols-3">
-        <img src="assets/changzhi_01.jpeg" alt="长治新闻大厦" class="img-large" onclick="openLightbox(this)">
-        <img src="assets/changzhi_02.jpeg" alt="新闻大厦细节1" onclick="openLightbox(this)">
-        <img src="assets/changzhi_03.jpeg" alt="新闻大厦细节2" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/changzhi_01.webp" alt="长治新闻大厦" class="img-large" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/changzhi_02.webp" alt="新闻大厦细节1" onclick="openLightbox(this)">
+        <img loading="lazy" src="assets/changzhi_03.webp" alt="新闻大厦细节2" onclick="openLightbox(this)">
       </div>
     </div>
   </div>
@@ -1285,7 +1297,7 @@ a { color: inherit; text-decoration: none; }
   <div class="lightbox-nav lightbox-prev" onclick="prevImage()">
     <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
   </div>
-  <img src="" alt="" id="lightboxImg">
+  <img loading="lazy" src="" alt="" id="lightboxImg">
   <div class="lightbox-nav lightbox-next" onclick="nextImage()">
     <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
   </div>
@@ -1395,33 +1407,33 @@ document.querySelectorAll('.project-images').forEach(function(container) {
 // ========== Project image mapping ==========
 // Maps image prefix to full list of images for each project
 var projectImageMap = {
-  'huawei_nanchang': ['huawei_nanchang_01.jpeg','huawei_nanchang_02.jpeg','huawei_nanchang_03.jpeg','huawei_nanchang_04.jpeg'],
-  'huawei_expo': ['huawei_expo_01.jpeg','huawei_expo_02.jpeg'],
-  'byd_nanning': ['byd_nanning_01.jpeg','byd_nanning_02.jpeg','byd_nanning_03.jpeg'],
-  'byd_xian': ['byd_xian_01.jpeg','byd_xian_02.jpeg','byd_xian_03.jpeg'],
-  'byd_denza': ['byd_denza_01.jpeg','byd_denza_02.jpeg','byd_denza_03.jpeg'],
-  'huaxia_pawnshop': ['huaxia_pawnshop_01.jpeg','huaxia_pawnshop_02.jpeg','huaxia_pawnshop_03.jpeg'],
-  'ordos_library': ['ordos_library_01.jpeg','ordos_library_02.jpeg','ordos_library_03.jpeg','ordos_library_04.jpeg'],
-  'shanxi_univ': ['shanxi_univ_01.jpeg','shanxi_univ_02.jpeg'],
-  'shanghai_biopharm': ['shanghai_biopharm_01.jpeg','shanghai_biopharm_02.jpeg','shanghai_biopharm_03.jpeg'],
-  'hongcaifang': ['hongcaifang_01.jpeg','hongcaifang_02.jpeg'],
-  'moutai': ['moutai_01.jpeg','moutai_02.jpeg'],
-  'block_museum': ['block_museum_01.jpeg','block_museum_02.jpeg'],
-  'jimubaby': ['jimubaby_01.jpeg','jimubaby_02.jpeg','jimubaby_03.jpeg'],
-  'chengdu_streaming': ['chengdu_streaming_01.jpeg'],
-  'hangzhou_villa': ['hangzhou_villa_01.jpeg','hangzhou_villa_02.jpeg','hangzhou_villa_03.jpeg'],
-  'henderson_villa': ['henderson_villa_01.jpeg','henderson_villa_02.jpeg','henderson_villa_03.jpeg'],
-  'evergrande': ['evergrande_01.jpeg','evergrande_02.jpeg','evergrande_03.jpeg'],
-  'chinese_courtyard': ['chinese_courtyard_01.jpeg','chinese_courtyard_02.jpeg'],
-  'cr_land': ['cr_land_01.jpeg','cr_land_02.jpeg','cr_land_03.jpeg'],
-  'shoukai_res': ['shoukai_res_01.jpeg','shoukai_res_02.jpeg'],
-  'shoukai_office': ['shoukai_office_01.jpeg','shoukai_office_02.jpeg','shoukai_office_03.jpeg','shoukai_office_04.jpeg'],
-  'runda': ['runda_01.jpeg','runda_02.jpeg','runda_03.jpeg'],
-  'lantai': ['lantai_01.jpeg','lantai_02.jpeg'],
-  'qishang': ['qishang_01.jpeg'],
-  'heping': ['heping_01.jpeg','heping_02.jpeg'],
-  'taiyuan': ['taiyuan_01.jpeg','taiyuan_02.jpeg'],
-  'changzhi': ['changzhi_01.jpeg','changzhi_02.jpeg','changzhi_03.jpeg']
+  'huawei_nanchang': ['huawei_nanchang_01.webp','huawei_nanchang_02.webp','huawei_nanchang_03.webp','huawei_nanchang_04.webp'],
+  'huawei_expo': ['huawei_expo_01.webp','huawei_expo_02.webp'],
+  'byd_nanning': ['byd_nanning_01.webp','byd_nanning_02.webp','byd_nanning_03.webp'],
+  'byd_xian': ['byd_xian_01.webp','byd_xian_02.webp','byd_xian_03.webp'],
+  'byd_denza': ['byd_denza_01.webp','byd_denza_02.webp','byd_denza_03.webp'],
+  'huaxia_pawnshop': ['huaxia_pawnshop_01.webp','huaxia_pawnshop_02.webp','huaxia_pawnshop_03.webp'],
+  'ordos_library': ['ordos_library_01.webp','ordos_library_02.webp','ordos_library_03.webp','ordos_library_04.webp'],
+  'shanxi_univ': ['shanxi_univ_01.webp','shanxi_univ_02.webp'],
+  'shanghai_biopharm': ['shanghai_biopharm_01.webp','shanghai_biopharm_02.webp','shanghai_biopharm_03.webp'],
+  'hongcaifang': ['hongcaifang_01.webp','hongcaifang_02.webp'],
+  'moutai': ['moutai_01.webp','moutai_02.webp'],
+  'block_museum': ['block_museum_01.webp','block_museum_02.webp'],
+  'jimubaby': ['jimubaby_01.webp','jimubaby_02.webp','jimubaby_03.webp'],
+  'chengdu_streaming': ['chengdu_streaming_01.webp'],
+  'hangzhou_villa': ['hangzhou_villa_01.webp','hangzhou_villa_02.webp','hangzhou_villa_03.webp'],
+  'henderson_villa': ['henderson_villa_01.webp','henderson_villa_02.webp','henderson_villa_03.webp'],
+  'evergrande': ['evergrande_01.webp','evergrande_02.webp','evergrande_03.webp'],
+  'chinese_courtyard': ['chinese_courtyard_01.webp','chinese_courtyard_02.webp'],
+  'cr_land': ['cr_land_01.webp','cr_land_02.webp','cr_land_03.webp'],
+  'shoukai_res': ['shoukai_res_01.webp','shoukai_res_02.webp'],
+  'shoukai_office': ['shoukai_office_01.webp','shoukai_office_02.webp','shoukai_office_03.webp','shoukai_office_04.webp'],
+  'runda': ['runda_01.webp','runda_02.webp','runda_03.webp'],
+  'lantai': ['lantai_01.webp','lantai_02.webp'],
+  'qishang': ['qishang_01.webp'],
+  'heping': ['heping_01.webp','heping_02.webp'],
+  'taiyuan': ['taiyuan_01.webp','taiyuan_02.webp'],
+  'changzhi': ['changzhi_01.webp','changzhi_02.webp','changzhi_03.webp']
 };
 
 // ========== Lightbox with gallery navigation ==========
@@ -1578,6 +1590,19 @@ document.querySelectorAll('.project-card').forEach(function(card) {
     }
   });
 });
+
+  // ========== Lazy Load Image Fade-in ==========
+  var lazyImages = document.querySelectorAll('img[loading="lazy"]');
+  lazyImages.forEach(function(img) {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', function() {
+        img.classList.add('loaded');
+      });
+    }
+  });
+
 </script>
 
 </body>
